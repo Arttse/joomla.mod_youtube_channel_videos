@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="3.2" method="upgrade">
+
+    <name>Youtube Channel Videos</name>
+    <creationDate>December 2015</creationDate>
+    <author>Nikita «Arttse» Bystrov</author>
+    <authorEmail>arttsesoft@gmail.com</authorEmail>
+
+    <copyright>Copyright (C) 2015 Nikita «Arttse» Bystrov. All rights reserved.</copyright>
+    <license>License GNU General Public License version 3</license>
+    <version>0.1.0</version>
+    <description>MOD_YOUTUBE_CHANNEL_VIDEOS_DESC</description>
+
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_youtube_channel_videos.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_youtube_channel_videos.sys.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_youtube_channel_videos.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_youtube_channel_videos.sys.ini</language>
+    </languages>
+
+    <files>
+        <folder>tmpl</folder>
+        <filename module="mod_youtube_channel_videos">mod_youtube_channel_videos.php</filename>
+        <filename>mod_youtube_channel_videos.xml</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+    </files>
+
+    <config>
+
+        <fields name="params">
+
+            <fieldset name="basic">
+
+                <field name="channel_url"
+                       type="text"
+                       default=""
+                       label="MOD_YOUTUBE_CHANNEL_VIDEOS_PARAM_CHANNEL_URL_LABEL"
+                       description="MOD_YOUTUBE_CHANNEL_VIDEOS_PARAM_CHANNEL_URL_DESC"
+                       required="true" />
+
+                <field name="video_count"
+                       type="text"
+                       default="3"
+                       label="MOD_YOUTUBE_CHANNEL_VIDEOS_PARAM_VIDEO_COUNT_LABEL"
+                       description="MOD_YOUTUBE_CHANNEL_VIDEOS_PARAM_VIDEO_COUNT_DESC"
+                       required="true" />
+
+            </fieldset>
+
+
+            <fieldset name="advanced">
+
+                <field name="module_errors"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="MOD_YOUTUBE_CHANNEL_VIDEOS_PARAM_SHOW_ERRORS_LABEL"
+                       description="MOD_YOUTUBE_CHANNEL_VIDEOS_PARAM_SHOW_ERRORS_DESC">
+
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+
+                </field>
+
+                <field name="layout"
+                       type="modulelayout"
+                       label="JFIELD_ALT_LAYOUT_LABEL"
+                       description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+
+                <field name="moduleclass_sfx"
+                       type="textarea" rows="3"
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+                <field name="cache"
+                       type="list"
+                       default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL"
+                       description="COM_MODULES_FIELD_CACHING_DESC">
+
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+
+                </field>
+
+                <field name="cache_time"
+                       type="text"
+                       default="900"
+                       label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                       description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+
+                <field name="cachemode"
+                       type="hidden"
+                       default="static">
+
+                    <option value="static"></option>
+
+                </field>
+
+            </fieldset>
+
+        </fields>
+
+    </config>
+
+</extension>
